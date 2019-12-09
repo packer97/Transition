@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Segway_transmission" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kR6-3U-aNa">
+                                <rect key="frame" x="166.5" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WaN-MW-NrU">
+                                <rect key="frame" x="141.5" y="415" width="92" height="30"/>
+                                <state key="normal" title="Show second"/>
+                                <connections>
+                                    <action selector="showSecond" destination="BYZ-38-t0r" eventType="touchUpInside" id="uZ6-NP-MhY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kR6-3U-aNa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="KsW-on-cny"/>
+                            <constraint firstItem="WaN-MW-NrU" firstAttribute="top" secondItem="kR6-3U-aNa" secondAttribute="bottom" constant="71" id="aVA-gT-hyo"/>
+                            <constraint firstItem="WaN-MW-NrU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dSQ-Xb-hkE"/>
+                            <constraint firstItem="WaN-MW-NrU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gNA-ab-1AD"/>
+                            <constraint firstItem="kR6-3U-aNa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hH8-Wf-sTr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstLabel" destination="kR6-3U-aNa" id="xrJ-bM-1q9"/>
+                        <segue destination="ii4-yZ-hp2" kind="show" identifier="showSecond" id="Wff-Br-gL7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="139"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="xI2-lt-l0M">
+            <objects>
+                <viewController id="ii4-yZ-hp2" customClass="SecondViewController" customModule="Segway_transmission" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XVV-t4-cpx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N49-KU-tnB" customClass="se">
+                                <rect key="frame" x="166.5" y="313" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHL-y6-BqY">
+                                <rect key="frame" x="153" y="407" width="69" height="30"/>
+                                <state key="normal" title="Show first"/>
+                                <connections>
+                                    <segue destination="bXK-Fn-BQW" kind="unwind" identifier="unwindToFirst" unwindAction="unwindViewControllerWithSegue:" id="DLI-Nd-lDJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="N49-KU-tnB" firstAttribute="centerY" secondItem="B5X-Zq-oR9" secondAttribute="centerY" id="R4x-xM-Iue"/>
+                            <constraint firstItem="N49-KU-tnB" firstAttribute="centerX" secondItem="B5X-Zq-oR9" secondAttribute="centerX" id="c6W-Wk-BDs"/>
+                            <constraint firstItem="WHL-y6-BqY" firstAttribute="top" secondItem="N49-KU-tnB" secondAttribute="bottom" constant="73" id="kZC-Mv-T6g"/>
+                            <constraint firstItem="WHL-y6-BqY" firstAttribute="centerX" secondItem="B5X-Zq-oR9" secondAttribute="centerX" id="wh6-22-3d6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B5X-Zq-oR9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jwd-sK-aFx"/>
+                    <connections>
+                        <outlet property="secondLabel" destination="N49-KU-tnB" id="8NB-hz-Mau"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0WQ-hq-kLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bXK-Fn-BQW" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="139"/>
+        </scene>
+    </scenes>
+</document>
